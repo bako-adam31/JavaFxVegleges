@@ -98,7 +98,7 @@ public class HelloController {
 
             logMessage("\n--- A CSOPORTKÖR VÉGEREDMÉNYE ---");
             // 1. Végső tabella kiírása a jobb oldali dobozba
-            printFinalStandings(allGroups);
+            //printFinalStandings(allGroups);
             // 2. A bal oldali 8 doboz frissítése a pontszámokkal
             updateGroupPanelsWithFinalStandings();
 
@@ -141,7 +141,7 @@ public class HelloController {
             this.allGroups.add(new Group(entry.getKey(), entry.getValue()));
         }
 
-        logMessage("Sikeres sorsolás! A csoportok kialakítva.");
+        //logMessage("Sikeres sorsolás! A csoportok kialakítva.");
 
         // --- CSOPORTOK KIÍRÁSA A BAL OLDALRA ---
         for (int i = 0; i < allGroups.size(); i++) {
@@ -185,10 +185,11 @@ public class HelloController {
             int rank = 1;
             for (GroupTeam team : group.teams) {
                 // Szebb kiíratás a végén
-                targetArea.appendText(String.format("%d. %s (%dp)\n",
+                targetArea.appendText(String.format("%d. %s  P: %d | GD: %d\n",
                         rank++,
                         team.getName(),
-                        team.getPoints()
+                        team.getPoints(),
+                        team.getGoalDifference()
                 ));
             }
         }
@@ -228,8 +229,7 @@ public class HelloController {
 
     /**
      * Kiírja a végső tabellát a JOBB oldali dobozba.
-     * (LAMBDA NÉLKÜL)
-     */
+
     private void printFinalStandings(List<Group> allGroups) {
         for (Group group : allGroups) {
             logMessage("\n--- " + group.name.toUpperCase() + " ---");
@@ -249,11 +249,10 @@ public class HelloController {
                 logMessage(team.toString());
             }
         }
-    }
+    }*/
 
     /**
      * Lefuttatja a sorsolást (adatbázis-olvasás, keverés, stb.)
-     * (LAMBDA NÉLKÜL)
      */
     private Map<String, List<Team>> runDraw() {
         List<Team> allTeams = dbManager.getTeams();
