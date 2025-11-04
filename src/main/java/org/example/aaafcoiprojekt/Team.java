@@ -5,7 +5,8 @@ public record Team(
         String name,
         String continent,
         int attack,
-        int defense
+        int defense,
+        String flagFile
 ) {
 
     @Override

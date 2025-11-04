@@ -31,8 +31,9 @@ public class DatabaseManager {
                 String continent = rs.getString("continent");
                 int attack = rs.getInt("attack");
                 int defense = rs.getInt("defense");
+                String flagFile = rs.getString("flag_file");
 
-                Team currentTeam = new Team(id, name, continent, attack, defense);
+                Team currentTeam = new Team(id, name, continent, attack, defense, flagFile);
 
                 teams.add(currentTeam);
             }

@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="807.0" prefWidth="1245.0" spacing="20.0" styleClass="main-background" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.aaafcoiprojekt.HelloController">
+<VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" spacing="20.0" styleClass="main-background" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.aaafcoiprojekt.HelloController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
@@ -38,49 +38,25 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </BorderPane.margin>
                <children>
-                  <TextArea fx:id="groupATextArea" prefHeight="125.0" prefWidth="173.0" styleClass="group-area">
-                     <font>
-                        <Font name="Marker Felt Thin" size="16.0" />
-                     </font></TextArea>
-                  <TextArea fx:id="groupBTextArea" prefHeight="29.0" prefWidth="64.0" styleClass="group-area" GridPane.columnIndex="1">
-                     <font>
-                        <Font name="Marker Felt Thin" size="16.0" />
-                     </font></TextArea>
-                  <TextArea fx:id="groupCTextArea" prefHeight="200.0" prefWidth="200.0" styleClass="group-area" GridPane.rowIndex="1">
-                     <font>
-                        <Font name="Marker Felt Thin" size="16.0" />
-                     </font></TextArea>
-                  <TextArea fx:id="groupDTextArea" prefHeight="200.0" prefWidth="200.0" styleClass="group-area" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <font>
-                        <Font name="Marker Felt Thin" size="16.0" />
-                     </font></TextArea>
-                  <TextArea fx:id="groupETextArea" prefHeight="200.0" prefWidth="200.0" styleClass="group-area" GridPane.rowIndex="2">
-                     <font>
-                        <Font name="Marker Felt Thin" size="16.0" />
-                     </font></TextArea>
-                  <TextArea fx:id="groupFTextArea" prefHeight="200.0" prefWidth="200.0" styleClass="group-area" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                     <font>
-                        <Font name="Marker Felt Thin" size="16.0" />
-                     </font></TextArea>
-                  <TextArea fx:id="groupGTextArea" prefHeight="200.0" prefWidth="200.0" styleClass="group-area" GridPane.rowIndex="3">
-                     <font>
-                        <Font name="Marker Felt Thin" size="16.0" />
-                     </font></TextArea>
-                  <TextArea fx:id="groupHTextArea" prefHeight="200.0" prefWidth="200.0" styleClass="group-area" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                     <font>
-                        <Font name="Marker Felt Thin" size="16.0" />
-                     </font></TextArea>
+                  <VBox fx:id="groupAVBox" prefHeight="200.0" prefWidth="100.0" styleClass="group-box" />
+                  <VBox fx:id="groupBVBox" prefHeight="200.0" prefWidth="100.0" styleClass="group-box" GridPane.columnIndex="1" />
+                  <VBox fx:id="groupCVBox" prefHeight="200.0" prefWidth="100.0" styleClass="group-box" GridPane.rowIndex="1" />
+                  <VBox fx:id="groupDVBox" prefHeight="200.0" prefWidth="100.0" styleClass="group-box" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <VBox fx:id="groupEVBox" prefHeight="200.0" prefWidth="100.0" styleClass="group-box" GridPane.rowIndex="2" />
+                  <VBox fx:id="groupFVBox" prefHeight="200.0" prefWidth="100.0" styleClass="group-box" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <VBox fx:id="groupGVBox" prefHeight="200.0" prefWidth="100.0" styleClass="group-box" GridPane.rowIndex="3" />
+                  <VBox fx:id="groupHVBox" prefHeight="200.0" prefWidth="100.0" styleClass="group-box" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                </children>
             </GridPane>
          </left>
          <right>
-            <VBox prefHeight="523.0" prefWidth="182.0" BorderPane.alignment="CENTER">
+            <VBox prefHeight="662.0" prefWidth="360.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="forduloButton" mnemonicParsing="false" onAction="#onForduloButtonClick" prefHeight="65.0" prefWidth="182.0" styleClass="start-gomb">
+                  <Button fx:id="forduloButton" mnemonicParsing="false" onAction="#onForduloButtonClick" prefHeight="65.0" prefWidth="361.0" styleClass="start-gomb">
                      <font>
                         <Font name="Marker Felt Thin" size="16.0" />
                      </font></Button>
-                  <TextArea fx:id="eredmenyTextArea" prefHeight="508.0" prefWidth="139.0" styleClass="group-area">
+                  <TextArea fx:id="eredmenyTextArea" prefHeight="508.0" prefWidth="355.0" styleClass="group-area">
                      <font>
                         <Font name="Marker Felt Thin" size="15.0" />
                      </font>
@@ -88,6 +64,9 @@
                </children>
             </VBox>
          </right>
+         <center>
+            <VBox fx:id="winnerVBox" prefHeight="200.0" prefWidth="100.0" styleClass="winner-box" BorderPane.alignment="CENTER" />
+         </center>
       </BorderPane>
    </children>
 </VBox>

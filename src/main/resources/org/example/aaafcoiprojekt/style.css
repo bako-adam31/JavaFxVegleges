@@ -12,39 +12,43 @@
     -fx-background-position: center center;
 }
 
-/* * 2. A CSOPORTOK HÁTTERE
- * Ezt alkalmazza a 8 bal oldali 'TextArea'-ra
- */
 .group-area {
-    /* Itt használhatsz egy másik képet, vagy csak egy áttetsző színt */
-    /* -fx-background-image: url('images/csoport_hatter.png');
-    -fx-background-size: cover;
-    */
 
-    /* A szöveg színe (ha a háttér sötét) */
+
     -fx-text-fill: black;
 }
+
+/* Ezt az új szabályt add hozzá a CSS fájlodhoz */
+.group-box {
+    /* Fél-áttetsző sötét háttér (a 0.4 az áttetszőség) */
+    -fx-background-color: rgba(0, 0, 0, 0.4);
+
+    /* Lekerekített sarkok a háttérnek */
+    -fx-background-radius: 10;
+
+    /* Térköz a VBox széle és a tartalma (a zászló/név) között */
+    -fx-padding: 10px;
+}
+
+/* * FONTOS: Mivel a zászló/név már nem 'group-area'-ban van,
+ * a betűtípus-szabályt is frissíteni kell.
+ * Ez a szabály beállítja a .group-box-on belüli összes címke stílusát.
+*/
+.group-box .label {
+    /* A Noto Emoji betűtípus a zászlókhoz */
+    -fx-font-family: "Noto Color Emoji", "System";
+
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+
+    /* A HelloController.java-ban is beállítottuk, de a CSS az erősebb */
+    -fx-text-fill: white;
+}
+
 .start-gomb {
     -fx-background-image: url('images/hatter.jpg');
 
 }
-
-/* * 3. TRÜKK: A TEXTAREA ÁTTETSZŐVÉ TÉTELE
- * A 'TextArea'-k alapból fehérek és eltakarják a hátteret.
- * Ez a kód teszi őket áttetszővé.
- */
-
-.group-area {
-    /* ... (Itt vannak a meglévő stílusaid, pl. -fx-text-fill: white;) ... */
-
-    /* EZ AZ ÚJ SOR: */
-    -fx-font-family: "Noto Color Emoji", "System";
-
-    /* Opcionális: Ha túl kicsik a zászlók, növeld meg a betűméretet */
-    -fx-font-size: 14px;
-}
-
-/* Ez a rész fontos, hogy a háttered átlátszó maradjon */
 .group-area .content {
     -fx-background-color: transparent;
 }
@@ -53,4 +57,27 @@
 #eredmenyTextArea {
     -fx-control-inner-background: #2B2B2B; /* Sötétszürke belső */
     -fx-text-fill: black; /* Világosszürke szöveg */
+}
+
+/* Ez a középső VBox, amibe a győztes kerül */
+.winner-box {
+    /* Alapból legyen teljesen átlátszó */
+    -fx-background-color: transparent;
+
+    /* A benne lévő zászlót és szöveget középre igazítja (ezt a Scene Builderben is beállítottuk) */
+    -fx-alignment: center;
+
+    /* Legyen egy kis térköz a zászló és a név között */
+    -fx-spacing: 10px;
+}
+
+/* Ez lesz a győztes nevének stílusa */
+.winner-label {
+    -fx-font-family: "Noto Color Emoji", "System";
+    -fx-font-size: 48px;  /* <-- JÓ NAGY BETŰMÉRET */
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+
+    /* Egy kis árnyék, hogy kiemelkedjen a háttérből */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75), 10, 0.5, 0, 0);
 }
