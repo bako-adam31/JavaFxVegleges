@@ -12,6 +12,12 @@
     -fx-background-position: center center;
 }
 
+.knock-background{
+    -fx-background-image: url('images/background.jpg');
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+}
+
 .group-area {
 
 
