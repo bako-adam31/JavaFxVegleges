@@ -173,10 +173,7 @@ public class HelloController {
         }
     }
 
-
-    // =========================================================================
     // --- A CSOPORTKÖR SEGÉDFÜGGVÉNYEI (Változatlanul) ---
-    // =========================================================================
 
     private void logMessage(String message) {
         eredmenyTextArea.appendText(message + "\n");
