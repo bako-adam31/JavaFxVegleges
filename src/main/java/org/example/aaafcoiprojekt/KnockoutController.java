@@ -300,7 +300,7 @@ public class KnockoutController {
 
                 // Név létrehozása
                 Label winnerLabel = new Label(theWinner.getName());
-                winnerLabel.getStyleClass().add("winner-label"); // CSS stílus
+                //winnerLabel.getStyleClass().add("winner-label"); // CSS stílus
 
                 // Hozzáadás a VBox-hoz
                 winnerDisplayBox.getChildren().addAll(winnerFlag, winnerLabel);

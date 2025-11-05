@@ -132,7 +132,7 @@ public class HelloController {
             // --- 3. VÁLTÁS A KIESÉSES SZAKASZRA (currentRound == 4) ---
             // A felhasználó most kattintott a "Kieséses Szakasz Indítása" gombra
 
-            forduloButton.setText("Betöltés...");
+            //forduloButton.setText("Betöltés...");
             forduloButton.setDisable(true); // Most már letilthatjuk
 
             // Most hívjuk meg az oldalváltást
@@ -148,9 +148,16 @@ public class HelloController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("knockout-view.fxml"));
             Scene knockoutScene = new Scene(loader.load());
 
+            try{
+                String cssPath = getClass().getResource("style.csss").toExternalForm();
+                knockoutScene.getStylesheets().add(cssPath);
+
+            } catch (NullPointerException e){
+                logMessage("nem talalt style.csss" + e.getMessage());
+            }
+
             // 2. Betöltjük a CSS-t az új oldalra is
-            String cssPath = getClass().getResource("style.css").toExternalForm();
-            knockoutScene.getStylesheets().add(cssPath);
+
 
             // 3. Átadjuk az adatokat (A CSOPORTKÖR EREDMÉNYÉT)
             // Lekérjük az új kontroller példányát (KnockoutController)
@@ -170,6 +177,7 @@ public class HelloController {
         } catch (IOException e) {
             logMessage("HIBA az oldalváltáskor: " + e.getMessage());
             e.printStackTrace();
+
         }
     }
 
@@ -192,6 +200,7 @@ public class HelloController {
         this.allGroups.clear();
         for (Map.Entry<String, List<Team>> entry : drawnGroupsMap.entrySet()) {
             this.allGroups.add(new Group(entry.getKey(), entry.getValue()));
+
         }
 
         logMessage("Sikeres sorsolás! A csoportok kialakítva.");
@@ -257,7 +266,7 @@ public class HelloController {
 
         Label teamLabel = new Label(team.getName());
         teamLabel.setTextFill(Color.WHITE);
-        teamLabel.setStyle("-fx-font-weight: bold; -fx-font-size: 14px;");
+        //teamLabel.setStyle("-fx-font-weight: bold; -fx-font-size: 14px;");
 
         HBox teamRow = new HBox(5);
         teamRow.getChildren().addAll(flagIcon, teamLabel);
